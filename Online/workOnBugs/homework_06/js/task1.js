@@ -1,0 +1,26 @@
+var a = Number(prompt('Enter side 1', 1));
+var b = Number(prompt('Enter side 2', 1));
+var c = Number(prompt('Enter side 3', 1));
+
+if(Math.sign(a) > 0 && Math.sign(b) > 0 && Math.sign(c) > 0){
+    if(a + b <= c || b + c <= a || a + c <= b){
+        console.log('Incorrect data');
+    }else{
+        var p = (a + b + c) / 2;
+        var area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        var type = '';
+        
+        if(a == b && a == c && b == c){
+            type = ' Equilateral';
+        }else if((a == b && a !=c) || (a == c && a != b) || b == c && b != a){
+            type = ' Isosceles';
+        }else if(a*a == b*b + c*c || b*b == a*a + c*c || c*c == a*a + b*b){
+            type = ' Right triangle';
+        }else if(a != b && a != c && b != c ){
+            type = ' Scalene ';
+        }
+        console.log('Type of triangle is ' + type + ' and square is ' + parseFloat(area.toFixed(2)))
+    }
+}else{
+    console.log('Incorrect data');
+}

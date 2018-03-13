@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+em{
+    padding:0 20px;
+    font-size: 0.9rem;
+}
+#root{
+    width: 50%;
+    margin-top: 10px;
+}
+.material-icons{
+    cursor: pointer;
+    font-size: 18px;
+}
+.material-icons.orange{
+    color:orange;
+}
+.material-icons.grey{
+    color: #aaa;
+}
+li{
+    margin-left: 20px;
+    list-style: none;
+}
+/*variant 1*/
+.folder{
+    margin-left: 0px;
+}
+ul{
+    margin: 0;
+    padding:0 20px;
+}
+p{
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    padding:2px 0;
+}
+p:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+/*variant 2*/
+/*
+li:hover{
+    background-color: #ddd;
+}
+details{
+    width: 100%;
+    padding-left:20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+details summary{
+    display: flex;
+    padding: 2px 0;
+    outline: none;
+    border: none;
+}
+details summary:hover{
+    background-color: #ddd;
+}
+details summary::-webkit-details-marker { 
+    display: none
+}
+*/

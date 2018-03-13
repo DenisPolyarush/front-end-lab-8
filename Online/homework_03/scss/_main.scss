@@ -1,0 +1,141 @@
+$titleColor: null! default;
+$inBackground: null! default;
+$outBackground: null! default;
+$briefBackground: null! default;
+$letterColor: null! default;
+$formColor: null! default;
+$buttonColor: null! default;
+$tableHeadBg: null! default;
+$backgroundTable: null! default;
+$linkColor: null! default;
+$uppercase: null! default;
+$beriefMargin: null! default;
+$beriefWidth: null! default;
+
+@mixin float($float) {
+    float: $float;
+    
+    &::after {
+    display: block;
+    content: "";
+    clear: both;
+    }
+}
+
+@mixin brief($width,$margin,$background){
+    width: $width;
+    padding: 20px;
+    margin: $margin;
+    color: #000;
+    background-color: $background;
+}
+
+body{
+    background-color: $outBackground;
+    color: $letterColor;
+}
+#content{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: $inBackground;
+    
+    h1, h2{
+        color: $titleColor;
+    }
+    h1{
+        text-align: center;
+        text-transform: $uppercase;
+    }
+    a{
+        color: $linkColor;
+    }
+    img{
+        border: 2px solid $inBackground;
+        outline: 2px solid $titleColor;
+        
+        &.img{
+            &-left{
+                margin: 0 25px 10px 0;
+
+                @include float(left);
+            }
+            &-right{
+                margin: 0 0 10px  20px;
+                
+                @include float(right);
+            }
+        }
+    }
+    .brief{
+        @include brief($beriefWidth,$beriefMargin,$briefBackground);
+        @include float(left);
+    }
+    table{
+        margin-bottom: 60px;
+        border-collapse: collapse;
+        caption{
+            text-align: right;
+            color: #000;
+        }
+        tr{
+            border-bottom: 1px solid $tableHeadBg;
+        }
+        th{
+            padding: 10px 20px;
+            border-right: 1px solid #fff;
+            text-transform: uppercase;
+            text-align: left;
+            font-weight: 400;
+            color: #000;
+            background-color: $tableHeadBg;
+            
+            &:last-child{
+                border-right: none;
+            }
+        }
+        td{
+            padding:10px 0 10px 20px;
+            background-color: $backgroundTable;
+        }
+    }
+    form{
+        color: $formColor;
+        
+        .block{
+            display: inline-block;
+            width: 49%;
+        }
+        .left{
+            @include float(left);
+        }
+        .right{
+            @include float(right);
+        }
+        label{
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        label, input, textarea{
+            display: block;
+        }
+        input, textarea{
+            width: 100%;
+            padding: 2px;
+            margin-top: 4px;
+        }
+        button{
+            padding: 10px 50px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            outline: none;
+            border: 1px solid $buttonColor;
+            box-shadow: none;
+            font-size: 18px;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: $buttonColor;
+            background-color: $inBackground;
+        }
+    }
+}

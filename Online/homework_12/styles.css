@@ -1,0 +1,87 @@
+body{
+    background-color: #1C1C1E;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: serif;
+}
+h1, .level{
+    color: #A19E87;
+}
+p{
+    margin: 0;
+    padding:0 0 0 5px;
+}
+img.preview{
+    width: 100%;
+    height: auto;
+}
+img.icon{
+    height: 13px;
+}
+.tanks_collection{
+    display: flex;
+    flex-wrap: wrap;
+}
+.block{
+    height: 180px;
+    width: 200px;
+    padding: 5px;
+    cursor: pointer;
+}
+.block:hover{
+    background-color: #2C2C2C;
+}
+.descr{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.model{
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+.white{
+    color: #fff;
+}
+.tank-details{
+    color: #A19E87;
+    font-size: 18px;
+}
+.tank-details a{
+    text-decoration: none;
+    color: #A19E87;
+    font-size: 14px;
+}
+.tank-details .descr{
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.content{
+    display: flex;
+}
+.block_preview{
+    width: 40%;
+}
+.characteristic{
+    width: 60%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+caption{
+    text-align: left;
+    padding-bottom: 10px;
+}
+td, th{
+    border: 1px solid #A19E87;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    color: #fff;
+    font-weight: 400;
+}

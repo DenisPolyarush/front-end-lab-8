@@ -1,0 +1,104 @@
+body {
+  background-color: rgba(198, 238, 252, 0.53);
+  color: #fff; }
+
+#content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #3b3b3b; }
+  #content h1, #content h2 {
+    color: #fccd10; }
+  #content h1 {
+    text-align: center;
+    text-transform: uppercase; }
+  #content a {
+    color: #f5c70f; }
+  #content img {
+    border: 2px solid #3b3b3b;
+    outline: 2px solid #fccd10; }
+    #content img.img-left {
+      margin: 0 25px 10px 0;
+      float: left; }
+      #content img.img-left::after {
+        display: block;
+        content: "";
+        clear: both; }
+    #content img.img-right {
+      margin: 0 0 10px  20px;
+      float: right; }
+      #content img.img-right::after {
+        display: block;
+        content: "";
+        clear: both; }
+  #content .brief {
+    width: 96%;
+    padding: 20px;
+    margin: 0 0 40px 0;
+    color: #000;
+    background-color: #fff178;
+    float: left; }
+    #content .brief::after {
+      display: block;
+      content: "";
+      clear: both; }
+  #content table {
+    margin-bottom: 60px;
+    border-collapse: collapse; }
+    #content table caption {
+      text-align: right;
+      color: #000; }
+    #content table tr {
+      border-bottom: 1px solid #94a34e; }
+    #content table th {
+      padding: 10px 20px;
+      border-right: 1px solid #fff;
+      text-transform: uppercase;
+      text-align: left;
+      font-weight: 400;
+      color: #000;
+      background-color: #94a34e; }
+      #content table th:last-child {
+        border-right: none; }
+    #content table td {
+      padding: 10px 0 10px 20px;
+      background-color: #677d01; }
+  #content form {
+    color: #f5c70f; }
+    #content form .block {
+      display: inline-block;
+      width: 49%; }
+    #content form .left {
+      float: left; }
+      #content form .left::after {
+        display: block;
+        content: "";
+        clear: both; }
+    #content form .right {
+      float: right; }
+      #content form .right::after {
+        display: block;
+        content: "";
+        clear: both; }
+    #content form label {
+      margin-bottom: 15px;
+      text-transform: uppercase; }
+    #content form label, #content form input, #content form textarea {
+      display: block; }
+    #content form input, #content form textarea {
+      width: 100%;
+      padding: 2px;
+      margin-top: 4px; }
+    #content form button {
+      padding: 10px 50px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      outline: none;
+      border: 1px solid #f5c70f;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      font-size: 18px;
+      cursor: pointer;
+      text-transform: uppercase;
+      color: #f5c70f;
+      background-color: #3b3b3b; }
