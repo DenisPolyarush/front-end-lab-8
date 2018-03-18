@@ -1,0 +1,47 @@
+@import "variables";
+
+body{
+  font-size: 14px;
+}
+.nav-item a{
+  color: #555;
+  font-weight: 600;
+}
+.navbar-toggler{
+  padding: 1px 6px;
+  margin: 0.5rem 0;
+}
+.text-primary{
+  color: @blue!important;
+}
+.nav-pills .nav-item .active{
+  background-color: @blue;
+}
+.related-cardio{
+  border: 1px solid @red;
+  background-color: @red;
+}
+.related-fitnes{
+  border: 1px solid @blue;
+  background-color: @blue;
+}
+.related-zumba{
+  border: 1px solid @orange;
+  background-color: @orange;
+}
+.related-bootcamp{
+  border: 1px solid @green;
+  background-color: @green;
+}
+.footer-content{
+  margin: 1.5rem 0 0 0;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  background-color: @grey;
+}
+
+@media screen and (max-width: 768px ){
+  .container{
+    min-width: 100%;
+  }
+}
