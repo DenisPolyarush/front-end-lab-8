@@ -1,0 +1,60 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ccc;
+}
+.wraper{
+  width: 360px;
+  margin: 100px auto;
+  background-color: #fff;
+  border: 1px solid
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+td, th{
+  padding: 5px;
+  text-transform: capitalize;
+  font-weight: 400;
+  border: 1px solid
+}
+th{
+  width: 40%;
+  color: blue;
+}
+form{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button, input{
+  padding: 5px;
+  outline: none;
+  
+}
+input{
+  flex-basis: 240%;
+}
+button{
+  width: 100%;
+  cursor: pointer
+}
+#btn_validate{
+  display: none;
+}
+#no_valid{
+  display: none;
+  text-align: center;
+  color: blue;
+}
+#no_valid h3{
+  color: red;
+}
