@@ -7,27 +7,36 @@ let result;
 
 btnTrack.addEventListener('click', function(e){
   e.preventDefault();
-//  let ip = document.querySelector('#IP').value;
-  
-  if(validateIP(document.querySelector('#IP').value)){
-    http.get(`https://ipapi.co/${document.querySelector('#IP').value}/json`)
+ let ip = document.querySelector('#IP').value;
+  if(validateIP(ip)){
+    http.get(`https://ipapi.co/${ip}/json`)
       .then(response =>{
       result = response;
       let res = JSON.parse(response);
       res = structure(res);
       createTable(res)
-      http.post('https://shrouded-garden-94580.herokuapp.com/', response).then(response => {
-        console.log(response)
-        respons.innerHTML = '<p>' + response + '</p>';
-      }).catch(error => console.log(error))
     }).catch(error =>console.error(`Rejected: ${error}`));
     
     btnValidate.style.display = 'block';
     noValid.style.display = 'none'
   }else{
-    btnValidate.style.display = 'none';
+    if(document.getElementById('table')){
+      document.getElementById('table').style.display = 'none';
+    }
     noValid.style.display = 'block'
   }
+})
+btnValidate.addEventListener('click', function(e){
+  e.preventDefault();
+    http.post('https://shrouded-garden-94580.herokuapp.com/', result).then(response => {
+        respons.innerHTML = '<p>' + response + '</p>';
+        setTimeout(function(){
+          respons.innerHTML = '';
+        },5000)
+      }).catch(error => console.log(error))
+    
+    btnValidate.style.display = 'block';
+    noValid.style.display = 'none'
 })
 
 function structure(obj){
@@ -45,6 +54,7 @@ function structure(obj){
 
 function createTable(obj){
   let table = document.createElement('table');
+  table.setAttribute('id', 'table')
   
   for(let key in obj){
     let tr = document.createElement('tr')
@@ -66,13 +76,12 @@ function validateIP(ip){
   let a = ip.split('.');
   if(a.length === 4){
     for(let i = 0; i < a.length; i++) {
-     
-     if(!a[i] || a[i] > 255){
-       return false;
-     }     
-      return true;
+        if(isNaN(a[i]) || !a[i] || a[i] > 255){
+          return false;
+       } 
     }
   }
+  return true;
 }
 
 
