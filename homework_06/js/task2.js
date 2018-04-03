@@ -23,6 +23,7 @@ btnTrack.addEventListener('click', function(e){
     if(document.getElementById('table')){
       document.getElementById('table').style.display = 'none';
     }
+    btnValidate.style.display = 'none';
     noValid.style.display = 'block'
   }
 })
