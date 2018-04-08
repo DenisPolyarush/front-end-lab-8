@@ -1,6 +1,6 @@
 let game = false;
 
-$(`#root`).append(`<h1 class="title">Gomoku</h1>`)
+$(`#root`).append(`<img src="img/gomoku.png" class="logo"></img>`)
 $(`#root`).append(`<div class="users"></div>`);
 $(`.users`).append(`<div class="white-user active">White</div>`);
 $(`.users`).append(`<div class="black-user">Black</div>`);

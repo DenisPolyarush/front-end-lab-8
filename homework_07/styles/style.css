@@ -6,6 +6,9 @@ body{
 	width: 450px;
 	margin: 0 auto;
 }
+.logo{
+	width: 100%;
+}
 .block{
 	position: absolute;
 	background-color: rgba(0, 0, 0, .7);
@@ -17,7 +20,7 @@ body{
 	position: absolute;
 	padding: 7px 40px;
 	border-radius: 25px;
-	top: 55%;
+	top: 60.6%;
 	left: 38%;
 	z-index: 21;
 	cursor: pointer;
