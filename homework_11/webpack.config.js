@@ -5,14 +5,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   context : path.resolve('src'),
-	entry : {
+  entry : {
     'styles.css' : ['./styles/styles.css'],
     'bundle.js' : ['./js/calculating-module.js', './js/interface-module.js', './js/output-module.js']
   },
-	output : {
-		path: path.resolve('dist'),
+  output : {
+    path: path.resolve('dist'),
     filename: '[name]'
-	},
+  },
   module: {
     rules: [
       {
@@ -32,7 +32,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: './index.html'
