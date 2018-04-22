@@ -6,7 +6,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   context : path.resolve('src'),
   entry : {
-    'styles.css' : ['./styles/styles.css'],
     'bundle.js' : ['./js/calculating-module.js', './js/interface-module.js', './js/output-module.js']
   },
   output : {

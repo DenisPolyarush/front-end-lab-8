@@ -1,5 +1,6 @@
 import calculatingModule from './calculating-module'
 import interfaceModule from './interface-module.js'
+import '../styles/styles.css'
 
 interfaceModule.btnAddition.addEventListener('click', 
 	() => {
