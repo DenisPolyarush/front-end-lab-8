@@ -1,0 +1,78 @@
+/* Write your colors variables here */
+.loading{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+.color-list{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
+	.color-item{
+		position: relative;
+		flex-basis: 150px;
+		height: 150px;
+		margin: 5px;
+		border-radius: 5px;
+
+		& button{
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+			padding: 4px 7px;
+			border-radius: 5px;
+			outline: none;
+			border: none;
+			background-color: #fff;
+			cursor: pointer;
+		}
+	}
+}
+.header{
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 10px 0;
+	.filter input{
+		border: none;
+		outline: none;
+	}
+
+	&-right{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+}
+.amount{
+	font-size: 14px;
+	color: #aaa;
+}
+.selected{
+	display: flex;
+	&-item{
+		position: relative;
+		margin-right: -9px;
+		width: 27px;
+		height: 27px;
+		border-radius: 5px;
+		box-sizing: border-box;
+		
+		&:last-child{
+			margin-right: 0;
+		}
+		.btn-close{
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			display: block;
+			width: 12px;
+			height: 12px;
+			border-radius: 25px;
+			background-color: red;
+			color: #fff;
+			font-size: 12px;
+			cursor: pointer;
+		}
+	}
+}
