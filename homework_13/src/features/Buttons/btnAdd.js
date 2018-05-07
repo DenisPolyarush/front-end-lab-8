@@ -13,7 +13,8 @@ class btnAdd extends Component {
 
 		return(
 			<button onClick={this.handleBtnClick}>
-				+ Add
+				<i className="material-icons btn-add">add</i>
+				Add
 			</button>
 		)
 	}

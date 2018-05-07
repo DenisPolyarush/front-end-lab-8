@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BtnClose from './SelectedBtn';
+import BtnClose from '../Buttons/btnDelete';
 
 class SelectedColor extends Component{
 	constructor(props){

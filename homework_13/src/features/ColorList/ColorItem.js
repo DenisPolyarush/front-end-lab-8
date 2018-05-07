@@ -1,5 +1,5 @@
 import React from 'react';
-import Btn from './btnAdd'
+import Btn from '../Buttons/btnAdd'
 
 const ColorItem = props => {
 	return(
