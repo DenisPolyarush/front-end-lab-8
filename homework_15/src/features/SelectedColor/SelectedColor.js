@@ -23,10 +23,8 @@ class SelectedColor extends Component{
 			selectArr = [];
 
 			if(n > 5){
-				console.log('more')
 				for(let i = n; i !== n - 5; i--){
 					selectArr.unshift(this.props.selectedColor[i - 1])
-					console.log(selectArr)
 				}
 			}else{
 				selectArr = this.props.selectedColor;

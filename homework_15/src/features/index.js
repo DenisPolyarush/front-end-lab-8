@@ -27,14 +27,17 @@ class Home extends Component {
 
 	handleSelected(id){
 		const select = this.state.selectedItems;
-
-		select.push(this.state.allItems.find(val => id === val.id));
 		
-		this.setState({
-			allItems : this.state.allItems.filter(val => id !== val.id),
-			store : this.state.store.filter(val => id !== val.id),
-			selectedItems : select
-		})
+		if(select.length < 10){
+			select.push(this.state.allItems.find(val => id === val.id));
+		
+			this.setState({
+				allItems : this.state.allItems.filter(val => id !== val.id),
+				store : this.state.store.filter(val => id !== val.id),
+				selectedItems : select
+			})
+		}
+		
 	}
 
 	handleDeleteSelected(id){
