@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="en">
+<link rel="stylesheet" href="css/styles.css">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJs</title>
+	<script src="lib/angular.min.js"></script>
+</head>
+<body ng-app="blogApp">
+  <div ng-controller="BlogController">
+    <h1>{{appTitle}}</h1>
+    <div class="flex">
+      <div class="posts">
+        <div class="post" ng-mouseover="showEditButton = true" ng-mouseout="showEditButton = false" ng-repeat="post in (onShow | filter:{title: onFilter})">
+          <div class="post-head">
+
+            <h2 ng-show="!edit">{{post.title}}</h2>
+            <input class="input-editTitle" type="text" placeholder='Enter new Title' ng-model="editTitle" ng-show="edit">
+
+            <img src={{post.url}} alt={{post.title}}>
+
+          </div>
+          <div class="category" ng-show="!edit">
+            <a ng-repeat="category in post.categories" ng-click="filter(category)" href="#">{{category}}</a>
+          </div>
+          <input type="text" placeholder='Enter new Categories' ng-model="editCategories" ng-show="edit">
+
+
+          <p ng-show="!edit">{{post.description}}</p>
+          <textarea ng-show="edit" ng-model="editDescription" value="" placeholder="Enter new description" rows="5"></textarea>
+
+          <div ng-show="showEditButton">
+            <button ng-show="!edit" ng-click="edit= !edit; editTitle=''; editDescription=''; editCategories=''; editPhoto=''; editPost(post ,editTitle, editDescription, editCategories, editPhoto) ">Edit</button>
+            <button ng-show="edit" ng-click="edit= !edit; editPost(post ,editTitle, editDescription, editCategories, editPhoto)">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-list">
+        <p>Categories</p>
+        <ul>
+          <li ng-repeat="category in categoriesStore">
+            <a href="#"  ng-click="filter(category)">{{category}} </a>
+          </li>
+        </ul>
+        <p>Search by Title</p>
+        <input type="text" placeholder="blog title..." ng-model='onFilter'>
+      </div>
+    </div>
+    <div>
+      <button ng-show="!isActive" ng-click="isActive=true; title=''; newCategories=''; description='' ">Add new Post</button>
+      <form ng-show="isActive">
+        <label>Title<input required type="text" placeholder="Title..." ng-model="title"></label>
+        <label>Categories<input required type="text" placeholder="categories..." ng-model="newCategories"></label>
+        <label>Description <textarea ng-model="description" placeholder="Description..." cols="30" rows="10"></textarea></label>
+        <label>Photo<input type="text" placeholder="Enter name photo(example : lviv)" ng-model="photo"></label>
+      <button ng-click="addPost(title, newCategories, description, photo)">Add new Post</button>
+      </form>
+    </div>
+
+  </div>
+
+
+<script src="src/app.js"></script>
+<script src="src/data.js"></script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
