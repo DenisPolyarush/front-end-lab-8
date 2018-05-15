@@ -1,0 +1,14 @@
+<td>{{item.id}}</td>
+<td >
+	<input [value]="item.topic" [disabled]="item.isEdit" name="item.topic">
+</td >
+<td>
+	<input [value]="item.date" [disabled]="item.isEdit" name="item.date">
+</td>
+<td>
+	<input [value]="item.lecture" [disabled]="item.isEdit" name="item.lecture">
+</td>
+<td>
+	<button  (click)="item.isEdit ? edit() : save(item.topic, item.date, item.lecture)">{{item.isEdit ? "E" : "S"}}</button>
+	<button  (click)="item.isEdit ? remove(index) : cancel()">{{item.isEdit ? "R" : "C"}}</button>
+</td>

@@ -1,0 +1,16 @@
+<table>
+  <caption>{{title}}<button (click)="add(isEdit = false)">Add</button></caption>
+  <tr>
+    <td>#</td>
+    <td>Topic</td>
+    <td>Date</td>
+    <td>Lecture</td>
+    <td>Active</td>
+  </tr>
+  <tr app-class-component 
+      *ngFor="let item of schedule; let i = index"
+      [item]="item"
+      [remove]="remove"
+      [index]="i">
+  </tr>
+</table>
